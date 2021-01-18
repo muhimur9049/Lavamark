@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+}
+
+application {
+    mainClassName = 'com.frederikam.lavamark.Lavamark'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation group: 'com.sedmelluq', name: 'lavaplayer', version: '1.3.66'
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.3.0-alpha5'
+}
+
+group = 'com.frederikam'
+description = 'Lavamark'
+
+shadowJar.setProperty('archiveFileName', 'Lavamark.jar')
+compileJava.options.encoding = 'UTF-8'
